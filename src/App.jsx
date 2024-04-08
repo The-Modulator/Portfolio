@@ -3,12 +3,12 @@ import "./app.scss";
 
 const App = () => {
   return <div>
-    <section>
+    <section id="Homepage">
       <Navbar/>
       </section>
-    <section><a href="">Character</a></section>
-    <section>Projects</section>
-    <section>Contact</section>
+    <section id="Character"><a href="">Character</a></section>
+    <section id="Projects">Projects</section>
+    <section id="Contact">Contact</section>
 
   </div>;
 };
