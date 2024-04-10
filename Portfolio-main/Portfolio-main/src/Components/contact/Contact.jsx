@@ -1,35 +1,81 @@
-import "./contact.scss"
+import "./contact.scss";
+import {motion} from "framer-motion";
+import emailjs from '@emailjs/browser';
+import { useState } from "react";
+import {useRef} from "react";
+
+const variants={
+    initial:{
+        y:500,
+        opacity:0
+    },
+    animate:{
+        y:0,
+        opacity:1,
+        transition:{
+            duration:0.5,
+            staggerChildren:0.1,
+        },
+    }
+}
 
 const Contact = () =>{
+    const formRef = useRef();
+    const [error, setError] = useState(false);
+    const [Success, setSuccess] = useState(false);
+
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs
+          .sendForm('service_wz4dgtn', 'template_gdd5d96', formRef.current, {
+            publicKey: 'QOX7MMYMr7C7KAc-R',
+          })
+          .then(
+            () => {
+                setSuccess(true);
+            },
+            (error) => {
+                setError(true);
+            },
+          );
+      };
+
+
+
     return(
-        <div className="contact">
-            <div className="textContainer">
-                <h1>Let's work together</h1>
-                <div className="mail">
+        <motion.div className="contact" variants={variants} initial="initial" whileInView="animate">
+            <motion.div className="textContainer">
+                <motion.h1  variants={variants}>Let's work together</motion.h1>
+                <motion.div className="mail"  variants={variants}>
                     <h2>Mail</h2>
                     <span>elias_ghabriel@hotmail.com</span>
-                </div>
-                <div className="address">
+                </motion.div>
+                <motion.div className="address"  variants={variants}>
                     <h2>Address</h2>
                     <span>Mtayleb, Mount Lebanon</span>
-                </div>
-                <div className="phone">
+                </motion.div>
+                <motion.div className="phone"  variants={variants}s>
                     <h2>Phone</h2>
                     <span>+961 76392539</span>
-                </div>
-                </div>
+                </motion.div>
+                </motion.div>
                 <div className="formContainer">
-                    <form>
-                    <input text="text" required placeholder="Name"/>
-                    <input text="email" required placeholder="Email"/>
-                    <textarea rows={8} placeholder="Message"/>
+                    
+                    <motion.form onSubmit={sendEmail}>
+                    <input text="text" required placeholder="Name" name="from_name"/>
+                    <input text="email" required placeholder="Email" name="reply_to"/>
+                    <textarea rows={8} placeholder="Message" name="message"/>
                     <button>Submit</button>
-                    </form>
+                    {error && "Error"}
+                    {Success && "Success"}
+                    </motion.form>
 
 
                 </div>
             
-        </div>
+        </motion.div>
     )
 }
 
