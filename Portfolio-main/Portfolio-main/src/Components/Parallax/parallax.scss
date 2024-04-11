@@ -53,11 +53,17 @@
     }
 
     .mars{
-        position: relative;
+        position: absolute;
         z-index: 2;
         margin-left: 900px;
         margin-bottom: 600px;
     }
+
+    .galaxy{
+        position: absolute;
+        z-index: 3;
+    }
     
+ 
   
 }
