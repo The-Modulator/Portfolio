@@ -49,12 +49,25 @@ const sliderVariants ={
 
 
 
-
-
 const Hero = () => {
 
-    
 
+    const handleDownloadPDF = () => {
+        // Assuming you have the URL of the PDF file
+        const pdfUrl = 'Elias-resume.pdf';
+    
+        // Creating a temporary anchor element
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'Elias-resume.pdf'; // Set the file name here
+        document.body.appendChild(link);
+    
+        // Triggering the click event on the anchor element
+        link.click();
+    
+        // Removing the anchor element from the DOM
+        document.body.removeChild(link);
+      };
 
 
     return (
@@ -66,10 +79,12 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
+            
           <motion.h2 variants={textVariants}>ELIAS GHABRIEL</motion.h2>
           <motion.h1 variants={textVariants}>Blockchain Developer and Consultant</motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>Download CV</motion.button>
+
+            <motion.button variants={textVariants} onClick={handleDownloadPDF}>Download CV</motion.button>
           </motion.div>
           <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="Scroll Down" />
         </motion.div>
