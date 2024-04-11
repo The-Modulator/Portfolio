@@ -20,7 +20,7 @@
         display: flex;
         gap: 40px;
         position: relative;
-        z-index: 9999;
+        z-index: 99;
 
         @include mobile{
             height: 50%;
