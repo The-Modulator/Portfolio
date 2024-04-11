@@ -19,7 +19,8 @@ const Parallax = () => {
 
 
     return(
-        <div className="parallax" ref={ref} style={{ background: 'linear-gradient(180deg, #111132, #505064)' }}>
+        // <div className="parallax" ref={ref} style={{ background: 'linear-gradient(180deg, #111132, #505064)' }}>
+        <div className="parallax" ref={ref} style={{ background: 'linear-gradient(180deg, #111132, #111132)' }}>
             <motion.h1 style={{y:yText}}>Projects</motion.h1>
             <motion.div className="mountains"></motion.div>
             <motion.div style={{x:yplanets}} className="planets"></motion.div>
