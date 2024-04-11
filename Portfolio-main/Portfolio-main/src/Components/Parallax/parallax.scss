@@ -38,7 +38,13 @@
 
     }
 
-    .jupiter{
+    .jupiter_container{
+        position: absolute;
+        z-index: 2;
+        margin-left:600px;
+    }
+
+    .jupiter_text{
         position: absolute;
         z-index: 2;
         margin-left:600px

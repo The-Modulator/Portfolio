@@ -52,7 +52,7 @@ const Parallax = () => {
         <div className="parallax" ref={ref} style={{ background: 'linear-gradient(180deg, #111132, #505064)' }}>
             <motion.h1 style={{y:yText}}>Projects</motion.h1>
             <motion.div className="mountains"></motion.div>
-            <motion.div style={{x:ysun}} className="sun"  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}></motion.div>
+            <motion.div style={{x:ysun}} className="sun"  whileHover={{scale: 1.05}}  whileTap={{scale: 1}}></motion.div>
             {/* <motion.div style={{x:yplanets}} className="planets"></motion.div> */}
             <motion.div style={{x:ystars}} className="stars"></motion.div>          
 
@@ -61,10 +61,16 @@ const Parallax = () => {
 
   {/*********************************************************** PLANET JUPITER ***********************************************************/}
 
-          <motion.div className="jupiter" style={{x:yplanets}}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-            {/* SVG markup */}
-            <svg height="100px" width="100px" viewBox="0 0 512 512" onMouseEnter={MouseEnterJupiter} onMouseLeave={MouseLeaveJupiter}>
-            {showJupiterText && <p>Hovered!</p>}
+
+<motion.div className="jupiter_container" style={{x:yplanets}} whileHover={{scale: 1.05}}  whileTap={{scale: 1}} >
+        
+          {/* {showJupiterText && <p>Decentralized Exchange!</p>} */}
+        
+
+<motion.div className="jupiter" onMouseEnter={MouseEnterJupiter} onMouseLeave={MouseLeaveJupiter}>
+            {/* SVG markup */} 
+            <svg height="100px" width="100px" viewBox="0 0 512 512" >
+            
               {/* Circle */}
               <circle style={{fill: '#f07c24'}} cx="256" cy="256" r="244.87"/>
       
@@ -116,16 +122,19 @@ const Parallax = () => {
           c1.093,0,2.206-0.163,3.306-0.504c21.246-6.6,39.446-17.448,52.636-31.371c9.16-9.669,21.464-16.008,34.643-17.848
           C330.41,344.152,334.655,338.528,333.805,332.439z"/>
             </svg>
+            
           </motion.div>
-
-
+         
+</motion.div>
+        
+      
 
 
 
   {/*********************************************************** PLANET SATURN ***********************************************************/}
 
 
-<motion.div className="saturn" style={{x:yplanets}}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
+<motion.div className="saturn" style={{x:yplanets}} whileHover={{scale: 1.05}}  whileTap={{scale: 1}}>
 <svg width="150px" height="150px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
     <path d="m17.79 22.85s1.34-3.47 6.22-6.13 9.59-2.59 13.44-2.15 6.12 2.37 8.09 5.69a13.33 13.33 0 0 1 2.09 5.34s6.41.81 10 2.91 2.28 4.65 1.57 6.06-2.35 3.59-6.72 4.69l-5.72 1.43a12.72 12.72 0 0 1 -5.76 6.57c-4.22 2.15-9.72 3.65-15.75.93s-8.41-9-8.41-9a20 20 0 0 1 -8.78-3.5c-3.8-2.97-5.18-5.43-3.06-8.62s8.85-4 12.79-4.22z" fill="#1d1d1b"/>
     <path d="m21.6 21.6c-.25 0-.65-.31-.59-.5s4.59-4.47 9.56-5.1 6.88 1.53 8.53 2.4 3.5 1.25 3.53 1.53 0 .41-.4.53-4.07-.56-6.35-.46-3.28 1.12-4.72 1.56a15.58 15.58 0 0 1 -5.25.19c-1.56-.15-4.31-.15-4.31-.15z" fill="#ddc07c"/>
@@ -147,8 +156,8 @@ const Parallax = () => {
 
 
 
-  <motion.div className="mars" style={{x:yplanets}}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-{showMarsText && <p>NFT MarketPlace!</p>}
+  <motion.div className="mars" style={{x:yplanets}} whileHover={{scale: 1.05}}  whileTap={{scale: 1}}>
+{/* {showMarsText && <p>NFT MarketPlace!</p>} */}
 
   <svg width="150px" height="150px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 
@@ -237,11 +246,13 @@ const Parallax = () => {
 </g>
 
 </svg>
+
 </motion.div>
 
+  {/*********************************************************** GALAXY ***********************************************************/}
 
-<div className="galaxy" style={{x:yplanets}}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-<svg width="50px" height="50px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+<div className="galaxy" style={{x:yplanets}} whileHover={{scale: 1.05}}  whileTap={{scale: 1}}>
+<svg width="30px" height="30px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
