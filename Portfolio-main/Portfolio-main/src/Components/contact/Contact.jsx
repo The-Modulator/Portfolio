@@ -1,8 +1,9 @@
 import "./contact.scss";
 import {motion} from "framer-motion";
-import emailjs from '@emailjs/browser';
 import { useState } from "react";
-import {useRef} from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const variants={
     initial:{
@@ -29,19 +30,18 @@ const Contact = () =>{
         e.preventDefault();
     
         emailjs
-          .sendForm('service_wz4dgtn', 'template_gdd5d96', formRef.current, {
-            publicKey: 'QOX7MMYMr7C7KAc-R',
+          .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+            publicKey: 'YOUR_PUBLIC_KEY',
           })
           .then(
             () => {
-                setSuccess(true);
+              console.log('SUCCESS!');
             },
             (error) => {
-                setError(true);
+              console.log('FAILED...', error.text);
             },
           );
       };
-
 
 
     return(
@@ -65,7 +65,7 @@ const Contact = () =>{
                     
                     <motion.form onSubmit={sendEmail}>
                     <input text="text" required placeholder="Name" name="from_name"/>
-                    <input text="email" required placeholder="Email" name="reply_to"/>
+                    <input text="email" required placeholder="Email" name="email"/>
                     <textarea rows={8} placeholder="Message" name="message"/>
                     <button>Submit</button>
                     {error && "Error"}
