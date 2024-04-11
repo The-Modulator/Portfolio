@@ -70,7 +70,7 @@ const Contact = () =>{
                         <button>Submit</button>
                         {error && "Error"}
                         {success && "Message received! Thanks for reaching out!"}
-                        </form>
+                        </motion.form>
 
 
                 </div>

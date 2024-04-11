@@ -19,6 +19,8 @@
         flex-direction: column;
         display: flex;
         gap: 40px;
+        position: relative;
+        z-index: 9999;
 
         @include mobile{
             height: 50%;
@@ -45,12 +47,13 @@
 
         .buttons{
             button{
-                padding: 20px;
+            padding: 20px;
             border: 1px solid white;
             border-radius: 10px;
             background-color: transparent;
             color: white;
             cursor:pointer;
+            
             }
         }
 
@@ -91,5 +94,6 @@
         color: #ffffff09;
         width: 50%;
         font-weight: bold;
+        
     }
 }
