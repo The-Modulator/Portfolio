@@ -21,17 +21,17 @@ const variants={
 }
 
 const Contact = () =>{
-    const formRef = useRef();
+    const formRef = useRef();  
     const [error, setError] = useState(false);
-    const [Success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(false);
 
 
     const sendEmail = (e) => {
         e.preventDefault();
     
         emailjs
-          .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-            publicKey: 'YOUR_PUBLIC_KEY',
+          .sendForm('service_wz4dgtn', 'template_gdd5d96', formRef.current, {
+            publicKey: 'QOX7MMYMr7C7KAc-R',
           })
           .then(
             () => {
@@ -65,12 +65,12 @@ const Contact = () =>{
                     
                     <motion.form onSubmit={sendEmail}>
                     <input text="text" required placeholder="Name" name="from_name"/>
-                    <input text="email" required placeholder="Email" name="email"/>
+                    <input text="email" required placeholder="Email" name="reply_to"/>
                     <textarea rows={8} placeholder="Message" name="message"/>
-                    <button>Submit</button>
-                    {error && "Error"}
-                    {Success && "Success"}
-                    </motion.form>
+                        <button>Submit</button>
+                        {error && "Error"}
+                        {success && "Message received! Thanks for reaching out!"}
+                        </form>
 
 
                 </div>
